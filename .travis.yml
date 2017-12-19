@@ -18,6 +18,7 @@ before_script:
 script:
   - travis_retry docker build -t "$image" .
   - ~/official-images/test/run.sh "$image"
+  - docker login --username caperneoignis --password '$PASSWORD'
   - docker tag "$image" caperneoignis/$image
   - docker push caperneoignis/$image
 after_script:
