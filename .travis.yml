@@ -16,9 +16,9 @@ before_script:
   - image="mysql:$VERSION"
 
 script:
-  - travis_retry docker build -t "$image" caperneoignis/"$image"
+  - travis_retry docker build -t "$image" caperneoignis/$image
   - ~/official-images/test/run.sh "$image"
-  - docker push caperneoignis/mysql:$VERSION
+  - docker push caperneoignis/$image
 after_script:
   - docker images
 # vim:set et ts=2 sw=2:
