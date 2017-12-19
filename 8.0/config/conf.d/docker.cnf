@@ -9,10 +9,8 @@ default-character-set=utf8mb4
 [mysqld]
 skip-host-cache
 skip-name-resolve
-#moodle specific config changes
-innodb_file_format=Barracuda
+#moodle specific config changes 8.0 removed innodb_file_formatand prefix.
 innodb_file_per_table=1
-innodb_large_prefix=1
 character-set-server=utf8mb4
 collation-server=utf8mb4_unicode_ci
 skip-character-set-client-handshake=1
