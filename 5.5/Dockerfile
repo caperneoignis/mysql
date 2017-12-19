@@ -69,7 +69,7 @@ RUN mkdir -p /var/lib/mysql /var/run/mysqld \
 	&& chmod 777 /var/run/mysqld
 
 VOLUME /var/lib/mysql
-
+COPY moodle.cnf /etc/mysql/conf.d/moodle.cnf
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
