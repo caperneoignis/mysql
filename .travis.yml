@@ -24,7 +24,9 @@ script:
       docker build -t "$image" .
       ~/official-images/test/run.sh "$image"
     )
-
+  - echo $PASSWORD | docker login --username caperneoignis --password-stdin
+  - docker tag "$image" caperneoignis/$image
+  - docker push caperneoignis/$image
 after_script:
   - docker images
 
